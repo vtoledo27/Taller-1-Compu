@@ -117,22 +117,27 @@ double Utils::evaluar(vector<Monomio> polinomio, double valor) {
     return resultado;
 }
 
+
+//Funcion que calcula y retorna la derivada en un polinomio
 vector<Monomio> Utils::derivar(vector<Monomio> polinomio)
 {
        vector<Monomio> deriv;
        cout<<endl;
-       cout<<"-Derivada: ";
+       cout<<"-Derivada (f(x)'): ";
        vector<Monomio>::size_type i;
        for(i=0; i < polinomio.size(); i++){
-           Monomio monomio = polinomio[i];
+           Monomio mon;
+           mon = polinomio[i];
+
            Monomio derivMon;    //Creamos un objeto de la clase Monomio para guardar la derivada del monomio
 
+
           /*Realizamos el calculo de la derivada del monomio
-           * -Para el nuevo  coeficiente: Multiplicar el exponente (o grado) del monomio por su coeficiente
-           * -Para el nuevo exponente (o grado): Restarle 1 al exponente actual
+           * -Para el nuevo  coeficiente: Multiplicamos el exponente (o grado) del monomio por su coeficiente
+           * -Para el nuevo exponente (o grado): Le restamos 1 al exponente actual
            */
-          derivMon.SetCoeficiente(monomio.GetGrado() * monomio.GetCoeficiente());
-          derivMon.SetGrado(monomio.GetGrado()-1);
+          derivMon.SetCoeficiente(mon.GetGrado() * mon.GetCoeficiente());
+          derivMon.SetGrado(mon.GetGrado()-1);
           deriv.push_back(derivMon);  //agregamos la derivada calculada al vector "deriv"
 
           cout<<derivMon.GetCoeficiente() << "x**" << derivMon.GetGrado()<<" ";
@@ -146,13 +151,17 @@ vector<Monomio> Utils::derivar(vector<Monomio> polinomio)
 double Utils::newthonRaphson(std::vector<Monomio> polinomio)
 {
     vector<Monomio> poliDeriv = derivar(polinomio); //llamamos a la funcion "derivar" y asignamos el valor que retorna a la variable "poliDeriv"
-    double pivote = 1;
-    double xn = pivote;
-    double error = 0.00001;
-    double resulPoli = evaluar(polinomio, xn);
-    double resulDeriv = evaluar(poliDeriv, xn);
 
-    double division = resulPoli/resulDeriv;
+    double xn = 1;
+    double error = 0.00001;
+    double resulPoli;
+    double resulDeriv;
+
+    resulPoli = evaluar(polinomio, xn);
+    resulDeriv = evaluar(poliDeriv, xn);
+
+    double division;
+    division = resulPoli/resulDeriv;
 
     //fabs()-> funcion que calcula el valor absoluto de un numero
     while(fabs(division) >=error){
@@ -164,6 +173,10 @@ double Utils::newthonRaphson(std::vector<Monomio> polinomio)
     }
     return xn;
 }
+
+
+
+
 
 
 
