@@ -56,9 +56,9 @@ int main(int argc, char** argv) {
 	/*Funcion que muestra a los integrantes del grupo*/
 void participantes() {
    cout<<endl<< "-|=== Taller N°1 ===|-" <<endl;
-   cout<<endl << "-Juanito";
+   cout<<endl << "-Kevin Labra Soto";
    cout<<endl << "-Victor Toledo Cerna";
-   cout<<endl << "-Dieguito" <<endl;
+   cout<<endl << "-Virla Parra Retamal" <<endl;
    cout<<endl;
    cout<<endl;
 
