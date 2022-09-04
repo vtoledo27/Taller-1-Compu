@@ -5,7 +5,7 @@ función real. Usando el método de Newton-Raphson."
 
     
   
-  #Integrantes:
+  ##Integrantes:
   -Kevin Labra Soto
   -Victor Toledo Cerna
   -Virla Parra Retamal
