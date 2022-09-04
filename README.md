@@ -6,11 +6,7 @@ EL siguiente taller debe recibir un polinomio ingresado por la terminal de ubunt
   
   
   
-  Integrantes:
-  
-  
-  
-  
+  #Integrantes:
   -Kevin Labra Soto
   -Victor Toledo Cerna
   -Virla Parra Retamal
