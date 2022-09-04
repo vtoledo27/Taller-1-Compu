@@ -156,7 +156,7 @@ double Utils::newthonRaphson(std::vector<Monomio> polinomio)
     double resulPoli, resulDeriv, aprox;
     resulPoli = evaluar(polinomio, n);
     resulDeriv = evaluar(poliDeriv, n);
-    aprox = resulPoli/resulDeriv;   //Dividimos entre si los valores conseguidos con ayuda de la uncion "evaluar"
+    aprox = resulPoli/resulDeriv;   //Dividimos entre si los valores conseguidos con ayuda de la funcion "evaluar"
     //Realizamos iteraciones 60 veces, ya que mientras mas hagamos mas preciso sera
     while(i<=60){
         resulPoli = evaluar(polinomio, n);
