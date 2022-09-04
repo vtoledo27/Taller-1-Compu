@@ -1,10 +1,9 @@
-# Taller-1-Compu
+# Taller-1-Computacion Paralela
 
-EL siguiente taller debe recibir un polinomio ingresado por la terminal de ubuntu y retornar las racies del polinomio usando el metodo Newton Raphson
-  
-  
-  
-  
+"Dado un polinomio cualquiera, se pide encontrar aproximaciones de los ceros o raíces de una
+función real. Usando el método de Newton-Raphson."
+
+    
   
   #Integrantes:
   -Kevin Labra Soto
