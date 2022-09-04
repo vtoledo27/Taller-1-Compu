@@ -151,40 +151,19 @@ vector<Monomio> Utils::derivar(vector<Monomio> polinomio)
 double Utils::newthonRaphson(std::vector<Monomio> polinomio)
 {
     vector<Monomio> poliDeriv = derivar(polinomio); //llamamos a la funcion "derivar" y asignamos el valor que retorna a la variable "poliDeriv"
-
-    double xn = 1;
-    double error = 0.00001;
-    double resulPoli;
-    double resulDeriv;
-
-    resulPoli = evaluar(polinomio, xn);
-    resulDeriv = evaluar(poliDeriv, xn);
-
-    double division;
-    division = resulPoli/resulDeriv;
-
-    //fabs()-> funcion que calcula el valor absoluto de un numero
-    while(fabs(division) >=error){
-    //Mientras el valor absoluto de la division sea mayor o igual al error
-        resulPoli = evaluar(polinomio, xn);
-        resulDeriv = evaluar (poliDeriv, xn);
-        division = resulPoli/resulDeriv;
-        xn = xn - division;
+    int i = 0;
+    double n = 1;
+    double resulPoli, resulDeriv, aprox;
+    resulPoli = evaluar(polinomio, n);
+    resulDeriv = evaluar(poliDeriv, n);
+    aprox = resulPoli/resulDeriv;   //Dividimos entre si los valores conseguidos con ayuda de la uncion "evaluar"
+    //Realizamos iteraciones 60 veces, ya que mientras mas hagamos mas preciso sera
+    while(i<=60){
+        resulPoli = evaluar(polinomio, n);
+        resulDeriv = evaluar (poliDeriv, n);
+        aprox = resulPoli/resulDeriv;
+        n = n - aprox;
+        i = i+1;
     }
-    return xn;
+    return n;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
